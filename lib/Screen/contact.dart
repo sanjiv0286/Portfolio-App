@@ -1,9 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/main.dart';
+import 'package:portfolio/homescreen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactScreen extends StatelessWidget {
@@ -101,7 +100,9 @@ class ContactScreen extends StatelessWidget {
                               title: Text(
                                 "Sanjiv Kushwaha",
                                 style: TextStyle(
-                                    fontSize: 25, fontWeight: FontWeight.bold),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
                               ),
                               subtitle: Text(
                                 "😉👀",

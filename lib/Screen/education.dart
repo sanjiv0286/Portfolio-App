@@ -8,10 +8,15 @@ class EducationScreen extends StatelessWidget {
     // return const Center(
     //   child: Text('Education Screen Content', style: TextStyle(fontSize: 24)),
     // );
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Education'),
+    return const Scaffold(
+      // appBar: AppBar(
+      //   title: const Center(child: Text('Education')),
+      // ),
+      body: Center(
+        child: Text(
+          "che che",
         ),
-        body: const Text("che che"));
+      ),
+    );
   }
 }
