@@ -14,30 +14,6 @@ import 'package:portfolio/Screen/resume.dart';
 import 'package:portfolio/Screen/tech.dart';
 import 'package:portfolio/Screen/usefullink.dart';
 
-// class ThemeController extends GetxController {
-//   final _currentThemeMode = ThemeMode.light.obs;
-
-//   ThemeMode get currentThemeMode => _currentThemeMode.value;
-//   void toggleTheme() {
-//     _currentThemeMode.value = _currentThemeMode.value == ThemeMode.light
-//         ? ThemeMode.dark
-//         : ThemeMode.light;
-//     Get.changeThemeMode(_currentThemeMode.value);
-//   }
-
-//   IconData getThemeIcon() {
-//     return _currentThemeMode.value == ThemeMode.light
-//         ? Icons.light_mode
-//         : Icons.dark_mode;
-//   }
-
-//   Color getBackgroundColor() {
-//     return _currentThemeMode.value == ThemeMode.light
-//         ? Colors.white
-//         : Colors.black;
-//   }
-// }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
