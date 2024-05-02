@@ -267,14 +267,14 @@ class ContactScreen extends StatelessWidget {
                 children: [
                   IconButton(
                     // selectedIcon: const FaIcon(FontAwesomeIcons.github),
-                    iconSize: 30,
+                    // iconSize: 30,
                     onPressed: () {
                       // Navigate to GitHub page
                       launch("https://github.com/sanjiv0286");
                     },
                     // icon: const FaIcon(FontAwesomeIcons.github),
                     icon: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         'assets/images/favicon-3.ico', // Replace 'favicon.png' with the path to your favicon icon
                         width: 30, // Adjust the width as needed
@@ -284,7 +284,7 @@ class ContactScreen extends StatelessWidget {
                   ),
                   IconButton(
                     // selectedIcon: const FaIcon(FontAwesomeIcons.instagram),
-                    iconSize: 30,
+                    // iconSize: 30,
 
                     onPressed: () {
                       // Navigate to Instagram page
@@ -293,7 +293,7 @@ class ContactScreen extends StatelessWidget {
                     },
                     // icon: const FaIcon(FontAwesomeIcons.instagram),
                     icon: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         'assets/images/favicon.ico', // Replace 'favicon.png' with the path to your favicon icon
                         width: 30, // Adjust the width as needed
@@ -302,7 +302,7 @@ class ContactScreen extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    iconSize: 30,
+                    // iconSize: 30,
                     onPressed: () {
                       // Navigate to Facebook page
                       launch(
@@ -310,7 +310,7 @@ class ContactScreen extends StatelessWidget {
                     },
                     // icon: const Icon(Icons.facebook),
                     icon: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         'assets/images/favicon-2.ico', // Replace 'favicon.png' with the path to your favicon icon
                         width: 30, // Adjust the width as needed
@@ -319,7 +319,7 @@ class ContactScreen extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    iconSize: 30,
+                    // iconSize: 30,
                     onPressed: () {
                       // Navigate to LinkedIn page
                       launch(
@@ -329,7 +329,7 @@ class ContactScreen extends StatelessWidget {
                     },
                     // icon: const FaIcon(FontAwesomeIcons.linkedin),
                     icon: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         'assets/images/favicon-1.ico', // Replace 'favicon.png' with the path to your favicon icon
                         width: 30, // Adjust the width as needed
