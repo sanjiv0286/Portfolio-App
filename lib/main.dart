@@ -1,31 +1,31 @@
 // // ***********************************************************************
-import 'package:device_preview/device_preview.dart';
+// import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import 'package:portfolio/homescreen.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-  await SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => const MyApp(),
-    ),
-  );
-}
+import 'package:portfolio/Screen/splash_screen.dart';
+// import 'package:portfolio/homescreen.dart';
 
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 //   await SystemChrome.setPreferredOrientations(
 //       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-//   runApp(const MyApp());
+//   runApp(
+//     DevicePreview(
+//       enabled: true,
+//       builder: (context) => const MyApp(),
+//     ),
+//   );
 // }
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  runApp(const MyApp());
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -49,7 +49,7 @@ class MyAppState extends State<MyApp> {
       //   primarySwatch: Colors.blue,
       // ),
 
-      home: const MyHomePage(),
+      home: const SplashScreen(),
     );
   }
 }
