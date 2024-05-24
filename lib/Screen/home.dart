@@ -4,15 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// class HomeScreen extends StatelessWidget {
-//   const HomeScreen({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Center(child: Text("zhbdcjdb"));
-//   }
-// }
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -244,7 +235,8 @@ class HomeScreenState extends State<HomeScreen> {
                       ),
                       IconButton(
                           onPressed: () {
-                            launch("https://github.com/sanjiv0286");
+                            launch(
+                                "https://x.com/KissiMissi382?t=9NyrXjUfATWY7Fo4LdOxPA&s=09");
                           },
                           icon: Icon(
                             FontAwesomeIcons.twitter,
@@ -310,108 +302,109 @@ class HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      // **************************************
       //Floating Action Button
-      floatingActionButton: MediaQuery.of(context).size.width < 600
-          ? FloatingActionButton.small(
-              onPressed: () {
-                _showBottomSheet(context);
-              },
-              child: const Icon(Icons.add),
-            )
-          : FloatingActionButton(
-              onPressed: () {
-                _showBottomSheet(context);
-              },
-              child: const Icon(Icons.add),
-            ),
+      // floatingActionButton: MediaQuery.of(context).size.width < 600
+      //     ? FloatingActionButton.small(
+      //         onPressed: () {
+      //           _showBottomSheet(context);
+      //         },
+      //         child: const Icon(Icons.add),
+      //       )
+      //     : FloatingActionButton(
+      //         onPressed: () {
+      //           _showBottomSheet(context);
+      //         },
+      //         child: const Icon(Icons.add),
+      //       ),
     );
   }
 
-  void _showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      // backgroundColor: const Color.fromARGB(255, 248, 249, 253),
-      context: context,
-      elevation: 3,
-      builder: (context) {
-        //Scrolling given for content in Container()
-        return SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: Container(
-              //Create a Column to display it's content
-              height: 600,
-              width: 400,
-              // padding: const EdgeInsets.all(20),
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  topLeft: Radius.circular(20),
-                ),
-              ),
-              //Create a Column to display it's content
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      myAchieve('78', "project"),
-                      myAchieve('65', "Client"),
-                      myAchieve('90', "Message"),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Text(
-                    "Specialized in",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          myspec(Icons.android, 'Android'),
-                          myspec(Icons.android, 'Android'),
-                          myspec(Icons.android, 'Android'),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          myspec(Icons.android, 'Android'),
-                          myspec(Icons.android, 'Android'),
-                          myspec(Icons.android, 'Android'),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          myspec(Icons.android, 'Android'),
-                          myspec(Icons.android, 'Android'),
-                          myspec(Icons.android, 'Android'),
-                        ],
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
+  // void _showBottomSheet(BuildContext context) {
+  //   showModalBottomSheet(
+  //     // backgroundColor: const Color.fromARGB(255, 248, 249, 253),
+  //     context: context,
+  //     elevation: 3,
+  //     builder: (context) {
+  //       //Scrolling given for content in Container()
+  //       return SingleChildScrollView(
+  //         child: Container(
+  //           padding: EdgeInsets.only(
+  //               bottom: MediaQuery.of(context).viewInsets.bottom),
+  //           child: Container(
+  //             //Create a Column to display it's content
+  //             height: 600,
+  //             width: 400,
+  //             // padding: const EdgeInsets.all(20),
+  //             padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
+  //             decoration: const BoxDecoration(
+  //               borderRadius: BorderRadius.only(
+  //                 topRight: Radius.circular(20),
+  //                 topLeft: Radius.circular(20),
+  //               ),
+  //             ),
+  //             //Create a Column to display it's content
+  //             child: Column(
+  //               crossAxisAlignment: CrossAxisAlignment.start,
+  //               children: [
+  //                 Row(
+  //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                   children: [
+  //                     myAchieve('78', "project"),
+  //                     myAchieve('65', "Client"),
+  //                     myAchieve('90', "Message"),
+  //                   ],
+  //                 ),
+  //                 const SizedBox(
+  //                   height: 30,
+  //                 ),
+  //                 const Text(
+  //                   "Specialized in",
+  //                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+  //                 ),
+  //                 const SizedBox(
+  //                   height: 10,
+  //                 ),
+  //                 Column(
+  //                   children: [
+  //                     Row(
+  //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                       children: [
+  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(Icons.android, 'Android'),
+  //                       ],
+  //                     ),
+  //                     const SizedBox(
+  //                       height: 10,
+  //                     ),
+  //                     Row(
+  //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                       children: [
+  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(Icons.android, 'Android'),
+  //                       ],
+  //                     ),
+  //                     const SizedBox(
+  //                       height: 10,
+  //                     ),
+  //                     Row(
+  //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //                       children: [
+  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(Icons.android, 'Android'),
+  //                       ],
+  //                     ),
+  //                   ],
+  //                 )
+  //               ],
+  //             ),
+  //           ),
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
 }
