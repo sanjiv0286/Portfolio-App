@@ -19,7 +19,11 @@ class CertificateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Certificates'),
+        automaticallyImplyLeading: false,
+        title: const Text(
+          'Certificates',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {

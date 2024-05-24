@@ -28,7 +28,7 @@ class MyHomePageState extends State<MyHomePage>
   late TabController _tabController;
   final List<Widget> _screens = [
     const HomeScreen(),
-    const EducationScreen(),
+    EducationScreen(),
     const ResumeScreen(),
     const CpProfileScreen(),
     const ProjectScreen(),
@@ -88,7 +88,22 @@ class MyHomePageState extends State<MyHomePage>
                 // isScrollable: true,
                 isScrollable:
                     constraints.maxWidth < 835, // Adjust based on screen width
-                // indicatorPadding: EdgeInsets.zero,
+                // *Add slide transition animation
+                // indicator: BoxDecoration(
+                //   border: Border(
+                //     bottom: BorderSide(
+                //       color: Theme.of(context).colorScheme.secondary,
+                //       width: 3.0,
+                //     ),
+                //   ),
+                // ),
+                // *Add slide transition animation
+                indicatorPadding: EdgeInsets.zero,
+                indicatorWeight: 2.0,
+                indicatorSize: TabBarIndicatorSize.label,
+                labelPadding: const EdgeInsets.symmetric(horizontal: 12.0),
+                labelColor: Theme.of(context).colorScheme.secondary,
+                unselectedLabelColor: Colors.grey,
               ),
             ),
             // ***************************** Drawer*****************************************
@@ -272,6 +287,7 @@ class MyHomePageState extends State<MyHomePage>
         return '';
     }
   }
+  // Helper method to create animation for each tab
 }
 
 // ******************************************************************

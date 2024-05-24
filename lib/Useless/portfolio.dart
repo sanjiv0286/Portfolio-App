@@ -1865,361 +1865,361 @@
 //************* Animated bottom nav bar with working drawer button ***************************************
 
 
-// ignore_for_file: library_private_types_in_public_api
+// // ignore_for_file: library_private_types_in_public_api
 
 
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/material.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+// import 'package:device_preview/device_preview.dart';
+// import 'package:flutter/material.dart';
+// // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() async {
-  runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => const MyApp(),
-    ),
-  );
-}
+// void main() async {
+//   runApp(
+//     DevicePreview(
+//       enabled: true,
+//       builder: (context) => const MyApp(),
+//     ),
+//   );
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: const [
-        DefaultMaterialLocalizations.delegate,
-        DefaultWidgetsLocalizations.delegate,
-      ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue, // Add your desired color
-      ),
-      builder: (context, widget) {
-        return MediaQuery(
-          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
-          child: widget!,
-        );
-      },
-      home: const MyHomePage(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       localizationsDelegates: const [
+//         DefaultMaterialLocalizations.delegate,
+//         DefaultWidgetsLocalizations.delegate,
+//       ],
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue, // Add your desired color
+//       ),
+//       builder: (context, widget) {
+//         return MediaQuery(
+//           data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
+//           child: widget!,
+//         );
+//       },
+//       home: const MyHomePage(),
+//     );
+//   }
+// }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({Key? key}) : super(key: key);
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
+// class _MyHomePageState extends State<MyHomePage> {
+//   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [
-    const HomeScreen(),
-    const AboutMeScreen(),
-    const ProjectScreen(),
-    const CpProfileScreen(),
-    const ContactScreen(),
-    const TechnicalSkillsScreen(),
-    const ResumeScreen(),
-    const EducationScreen(),
-    const CertificateScreen(),
-  ];
+//   final List<Widget> _screens = [
+//     const HomeScreen(),
+//     const AboutMeScreen(),
+//     const ProjectScreen(),
+//     const CpProfileScreen(),
+//     const ContactScreen(),
+//     const TechnicalSkillsScreen(),
+//     const ResumeScreen(),
+//     const EducationScreen(),
+//     const CertificateScreen(),
+//   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_getScreenTitle(_selectedIndex)),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const UserAccountsDrawerHeader(
-              accountName: Text("Sanjiv Kushwaha"),
-              accountEmail: Text("sanjiv21101@iiitnr.edu.in"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/sk.png'),
-              ),
-            ),
-            for (int i = 0; i < _screens.length; i++)
-              ListTile(
-                title: Text(_getScreenTitle(i)),
-                onTap: () {
-                  _onNavItemTapped(i);
-                  Navigator.pop(context);
-                },
-              ),
-          ],
-        ),
-      ),
-      body: _screens[_selectedIndex],
-      bottomNavigationBar: ConvexAppBar(
-        items: _getBottomNavItems(),
-        initialActiveIndex: _selectedIndex,
-        onTap: (int index) {
-          _onNavItemTapped(index);
-        },
-        key: UniqueKey(),
-      ),
-    );
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(_getScreenTitle(_selectedIndex)),
+//       ),
+//       drawer: Drawer(
+//         child: ListView(
+//           padding: EdgeInsets.zero,
+//           children: [
+//             const UserAccountsDrawerHeader(
+//               accountName: Text("Sanjiv Kushwaha"),
+//               accountEmail: Text("sanjiv21101@iiitnr.edu.in"),
+//               currentAccountPicture: CircleAvatar(
+//                 backgroundImage: AssetImage('assets/images/sk.png'),
+//               ),
+//             ),
+//             for (int i = 0; i < _screens.length; i++)
+//               ListTile(
+//                 title: Text(_getScreenTitle(i)),
+//                 onTap: () {
+//                   _onNavItemTapped(i);
+//                   Navigator.pop(context);
+//                 },
+//               ),
+//           ],
+//         ),
+//       ),
+//       body: _screens[_selectedIndex],
+//       bottomNavigationBar: ConvexAppBar(
+//         items: _getBottomNavItems(),
+//         initialActiveIndex: _selectedIndex,
+//         onTap: (int index) {
+//           _onNavItemTapped(index);
+//         },
+//         key: UniqueKey(),
+//       ),
+//     );
+//   }
 
-  void _onNavItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+//   void _onNavItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
 
-  // List<BottomNavigationBarItem> _getBottomNavItems() {
-  //   return List.generate(
-  //     _screens.length,
-  //     (index) => BottomNavigationBarItem(
-  //       icon: Icon(_getBottomNavIcon(index)),
-  //       label: _getScreenTitle(index),
-  //     ),
-  //   );
-  // }
-  List<TabItem> _getBottomNavItems() {
-    return List.generate(
-      _screens.length,
-      (index) => TabItem(
-        icon: _getBottomNavIcon(index),
-        title: _getScreenTitle(index),
-      ),
-    );
-  }
+//   // List<BottomNavigationBarItem> _getBottomNavItems() {
+//   //   return List.generate(
+//   //     _screens.length,
+//   //     (index) => BottomNavigationBarItem(
+//   //       icon: Icon(_getBottomNavIcon(index)),
+//   //       label: _getScreenTitle(index),
+//   //     ),
+//   //   );
+//   // }
+//   List<TabItem> _getBottomNavItems() {
+//     return List.generate(
+//       _screens.length,
+//       (index) => TabItem(
+//         icon: _getBottomNavIcon(index),
+//         title: _getScreenTitle(index),
+//       ),
+//     );
+//   }
 
-  IconData _getBottomNavIcon(int index) {
-    switch (index) {
-      case 0:
-        return Icons.home;
-      case 1:
-        return Icons.person;
-      case 2:
-        return Icons.work;
-      case 3:
-        return Icons.account_circle;
-      case 4:
-        return Icons.contact_emergency_outlined;
-      case 5:
-        return Icons.mail;
-      case 6:
-        return Icons.mail;
-      case 7:
-        return Icons.school;
-      case 8:
-        return Icons.mail;
-      default:
-        return Icons.home;
-    }
-  }
+//   IconData _getBottomNavIcon(int index) {
+//     switch (index) {
+//       case 0:
+//         return Icons.home;
+//       case 1:
+//         return Icons.person;
+//       case 2:
+//         return Icons.work;
+//       case 3:
+//         return Icons.account_circle;
+//       case 4:
+//         return Icons.contact_emergency_outlined;
+//       case 5:
+//         return Icons.mail;
+//       case 6:
+//         return Icons.mail;
+//       case 7:
+//         return Icons.school;
+//       case 8:
+//         return Icons.mail;
+//       default:
+//         return Icons.home;
+//     }
+//   }
 
-  String _getScreenTitle(int index) {
-    switch (index) {
-      case 0:
-        return 'Home';
-      case 1:
-        return 'About Me';
-      case 2:
-        return 'Project';
-      case 3:
-        return 'CP Profile';
-      case 4:
-        return 'Contact';
-      case 5:
-        return 'Technical Skill';
-      case 6:
-        return 'Resume';
-      case 7:
-        return 'Education';
-      case 8:
-        return 'Certificate';
-      default:
-        return '';
-    }
-  }
-}
+//   String _getScreenTitle(int index) {
+//     switch (index) {
+//       case 0:
+//         return 'Home';
+//       case 1:
+//         return 'About Me';
+//       case 2:
+//         return 'Project';
+//       case 3:
+//         return 'CP Profile';
+//       case 4:
+//         return 'Contact';
+//       case 5:
+//         return 'Technical Skill';
+//       case 6:
+//         return 'Resume';
+//       case 7:
+//         return 'Education';
+//       case 8:
+//         return 'Certificate';
+//       default:
+//         return '';
+//     }
+//   }
+// }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+// class HomeScreen extends StatelessWidget {
+//   const HomeScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'Home Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'Home Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class AboutMeScreen extends StatelessWidget {
-  const AboutMeScreen({Key? key}) : super(key: key);
+// class AboutMeScreen extends StatelessWidget {
+//   const AboutMeScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'About Me Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'About Me Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class ProjectScreen extends StatelessWidget {
-  const ProjectScreen({Key? key}) : super(key: key);
+// class ProjectScreen extends StatelessWidget {
+//   const ProjectScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'Project Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'Project Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class CpProfileScreen extends StatelessWidget {
-  const CpProfileScreen({Key? key}) : super(key: key);
+// class CpProfileScreen extends StatelessWidget {
+//   const CpProfileScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'CP Profile Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'CP Profile Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class ContactScreen extends StatelessWidget {
-  const ContactScreen({Key? key}) : super(key: key);
+// class ContactScreen extends StatelessWidget {
+//   const ContactScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'Contact Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'Contact Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class TechnicalSkillsScreen extends StatelessWidget {
-  const TechnicalSkillsScreen({Key? key}) : super(key: key);
+// class TechnicalSkillsScreen extends StatelessWidget {
+//   const TechnicalSkillsScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'Technical Skills Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'Technical Skills Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class ResumeScreen extends StatelessWidget {
-  const ResumeScreen({Key? key}) : super(key: key);
+// class ResumeScreen extends StatelessWidget {
+//   const ResumeScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'Resume Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'Resume Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class EducationScreen extends StatelessWidget {
-  const EducationScreen({Key? key}) : super(key: key);
+// class EducationScreen extends StatelessWidget {
+//   const EducationScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'Education Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'Education Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class CertificateScreen extends StatelessWidget {
-  const CertificateScreen({Key? key}) : super(key: key);
+// class CertificateScreen extends StatelessWidget {
+//   const CertificateScreen({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          color: Colors.lightBlue[100],
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
-            'Certificate Screen Content',
-            style: TextStyle(fontSize: 24, color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-} 
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           color: Colors.lightBlue[100],
+//           padding: const EdgeInsets.all(16.0),
+//           child: const Text(
+//             'Certificate Screen Content',
+//             style: TextStyle(fontSize: 24, color: Colors.black),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// } 

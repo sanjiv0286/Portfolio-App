@@ -33,11 +33,16 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text(
           'Contact',
           // style: TextStyle(color: Colors.white),
+          style: TextStyle(fontWeight: FontWeight.bold),
+
         ),
-        // backgroundColor: Colors.blue,
+        // backgroundColor: Theme.of(context).colorScheme.background,
+
+        // backgroundColor: const Color.fromARGB(255, 19, 0, 227),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,

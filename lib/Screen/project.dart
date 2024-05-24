@@ -97,6 +97,7 @@ class _ProjectScreenState extends State<ProjectScreen> {
       // backgroundColor: Color(0xff1e1e1e),
       // backgroundColor: Colors.black,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         // backgroundColor: const Color(0xff252525),
         title: const Text(
           'My Projects',

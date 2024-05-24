@@ -8,39 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_pdfview/flutter_pdfview.dart';
-
-// class ResumeScreen extends StatelessWidget {
-//   const ResumeScreen({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Center(
-//       child: Text('Resume Screen Content', style: TextStyle(fontSize: 24)),
-//     );
-//   }
-// }
-// class ResumeScreen extends StatelessWidget {
-//   const ResumeScreen({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return PDFView(
-//       filePath: 'assets/resume.pdf', // Path to your PDF file
-//       autoSpacing: true,
-//       pageSnap: true,
-//       pageFling: true,
-//       fitEachPage: true,
-//       defaultPage: 0,
-//       fitPolicy: FitPolicy.BOTH,
-//       onError: (error) {
-//         stdout.write(error);
-//       },
-//     );
-//   }
-// }
-
-// void main() => runApp(const ResumeScreen());
 
 class ResumeScreen extends StatefulWidget {
   const ResumeScreen({Key? key}) : super(key: key);
@@ -110,9 +77,11 @@ class ResumeScreenState extends State<ResumeScreen> {
         appBar: AppBar(
           // backgroundColor: Colors.black87,
           // backgroundColor: const Color(0xff262628),
-
+automaticallyImplyLeading: false,
           title: const Text(
             'Resume PDF',
+          style: TextStyle(fontWeight: FontWeight.bold),
+
             // style: TextStyle(color: Colors.white70),
           ),
           actions: [

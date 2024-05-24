@@ -14,6 +14,7 @@ class AboutMeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // automaticallyImplyLeading: false,
         title: const Text(
           'About Me',
           style: TextStyle(

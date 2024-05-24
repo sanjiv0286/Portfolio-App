@@ -29,6 +29,7 @@ class _TechnicalSkillsScreenState extends State<TechnicalSkillsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text(
           'My Skills',
           style: TextStyle(fontWeight: FontWeight.bold),
