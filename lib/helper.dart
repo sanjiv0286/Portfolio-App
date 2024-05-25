@@ -7,4 +7,3 @@ const appName = 'Ai Assistant';
 late Size mq;
 
 
-// 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

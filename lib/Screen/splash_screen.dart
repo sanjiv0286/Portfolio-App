@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:portfolio/Screen/LoginScreen/login.dart';
-// import 'package:portfolio/Screen/OtpScreen/otp.dart';
 import 'package:portfolio/custom_loding.dart';
-// import 'package:portfolio/homescreen.dart';
+import 'package:portfolio/homescreen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // MaterialPageRoute(builder: (_) => OnboardingScreen()));
       // *navigation using getx
       // Get.off(() => const MyHomePage());
-      Get.off(() => const LoginPage());
+      Get.off(() => const MyHomePage());
       // Get.off(() => const OtpScreenPage());
       // Navigator.of(context).pushReplacement(MaterialPageRoute(
       //     builder: (_) =>
