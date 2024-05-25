@@ -1,26 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// class EducationScreen extends StatelessWidget {
-//   const EducationScreen({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // return const Center(
-//     //   child: Text('Education Screen Content', style: TextStyle(fontSize: 24)),
-//     // );
-//     return const Scaffold(
-//       // appBar: AppBar(
-//       //   title: const Center(child: Text('Education')),
-//       // ),
-//       body: Center(
-//         child: Text(
-//           "che che",
-//         ),
-//       ),
-//     );
-//   }
-// }
-// **************************************************************************
 import 'package:flutter/material.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -28,61 +5,49 @@ class Education {
   final String degree;
   final String institution;
   final String description;
-  final DateTime startDate;
-  final DateTime endDate;
+  // DateTime startDate;
+  // DateTime endDate;
+  DateTime? startDate;
+  DateTime? endDate;
 
   Education({
     required this.degree,
     required this.institution,
     required this.description,
-    required this.startDate,
-    required this.endDate,
+    // required this.startDate,
+    // required this.endDate,
+    this.startDate,
+    this.endDate,
   });
 }
 
 class EducationScreen extends StatelessWidget {
   EducationScreen({Key? key}) : super(key: key);
 
-  // final List<Education> _educations = [
-  //   Education(
-  //     degree: 'Bachelor of Science in Computer Science',
-  //     institution: 'Tech University',
-  //     description: 'Focused on software engineering and data structures.',
-  //     startDate: DateTime(2016, 9, 1),
-  //     endDate: DateTime(2020, 6, 30),
-  //   ),
-  //   Education(
-  //     degree: 'Master of Science in Software Engineering',
-  //     institution: 'Innovative University',
-  //     description: 'Specialized in scalable software architectures.',
-  //     startDate: DateTime(2021, 9, 1),
-  //     endDate: DateTime(2023, 6, 30),
-  //   ),
-  //   // Add more education entries as needed
-  // ];
-
   final List<Education> _educations = [
     Education(
       degree:
-          'Bachelor of Technology in Electronics and Communication Engineering',
-      institution: 'PQR University',
-      description: 'Specialized in Electronics and Communication Engineering.',
+          'Bachelor of Technology in Electronics and Communication Engineering ',
+      institution: 'IIIT Naya Raipur',
+      description:
+          'current cgpa 7.79 till 5th Semester\nEnthusiast in Comuter Science or Related field',
       startDate: DateTime(2021, 12, 12), // Add actual dates
       endDate: DateTime(2025, 8, 30), // Add actual dates
     ),
     Education(
-      degree: '12th Standard',
-      institution: 'ABC College',
-      description: 'Scored 90% in 12th standard board examinations.',
-      startDate: DateTime(2018, 5, 1), // Add actual dates
-      endDate: DateTime(2019, 3, 30),
+      degree: '12th Standard ( RBSE Board )',
+      institution: 'Children Academy Senior Secondary School',
+      description:
+          'Scored 91.40% in 12th standard board examinations.\n(PCM : 95.66%)',
+      // startDate: DateTime(2018, 5, 1), // Add actual dates
+      // endDate: DateTime(2019, 3, 30),
     ),
     Education(
-      degree: '10th Standard',
-      institution: 'XYZ School',
-      description: 'Scored 95% in 10th standard board examinations.',
-      startDate: DateTime(2016, 6, 1), // Add actual dates
-      endDate: DateTime(2017, 3, 30),
+      degree: '10th Standard ( RBSE Board )',
+      institution: 'Shri Hardev Das Adarsh Senior Secondary School',
+      description: 'Scored 86.33% in 10th standard board examinations.',
+      // startDate: DateTime(2016, 6, 1), // Add actual dates
+      // endDate: DateTime(2017, 3, 30),
     ),
     // Add more education entries as needed
   ];
@@ -152,18 +117,23 @@ class _EducationCard extends StatelessWidget {
               style:
                   const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 4.0),
+            const SizedBox(height: 6.0),
             Text(
               education.institution,
               style:
-                  const TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600),
+                  const TextStyle(fontSize: 13.0, fontWeight: FontWeight.w700),
             ),
-            const SizedBox(height: 4.0),
-            Text(
-              '${education.startDate.year} - ${education.endDate.year}',
-              style: const TextStyle(fontSize: 12.0, color: Colors.grey),
-            ),
-            const SizedBox(height: 8.0),
+            const SizedBox(height: 5.0),
+            // Text(
+            //   '${education.startDate?.year} - ${education.endDate?.year}',
+            //   style: const TextStyle(fontSize: 12.0, color: Colors.grey),
+            // ),
+            if (education.startDate != null && education.endDate != null)
+              Text(
+                '${education.startDate?.year} - ${education.endDate?.year}',
+                style: const TextStyle(fontSize: 12.0, color: Colors.grey),
+              ),
+            const SizedBox(height: 5.0),
             Text(
               education.description,
               style: const TextStyle(fontSize: 12.0),
@@ -196,23 +166,10 @@ class _EducationCard extends StatelessWidget {
 //   });
 // }
 
+
+
 // class EducationScreen extends StatelessWidget {
-//   const EducationScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Experience Showcase',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: ExperienceListScreen(),
-//     );
-//   }
-// }
-
-// class ExperienceListScreen extends StatelessWidget {
-//   ExperienceListScreen({super.key});
+//   EducationScreen({super.key});
 
 //   final List<Experience> _experiences = [
 //     Experience(
@@ -239,13 +196,10 @@ class _EducationCard extends StatelessWidget {
 //     // Add more experiences as needed
 //   ];
 
-
-
-
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.background,
+//       // backgroundColor: Theme.of(context).colorScheme.background,
 //       appBar: AppBar(
 //         title: const Text('My Experiences'),
 //       ),
@@ -324,4 +278,4 @@ class _EducationCard extends StatelessWidget {
 //     );
 //   }
 // }
-// // ****************************************************************************
+// ****************************************************************************

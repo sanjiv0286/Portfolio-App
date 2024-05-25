@@ -2,7 +2,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
@@ -23,15 +22,6 @@ class ResumeScreenState extends State<ResumeScreen> {
   void initState() {
     super.initState();
     loadResumePdf();
-  }
-
-  Color _getBackgroundColor(BuildContext context) {
-    if (Theme.of(context).brightness == Brightness.light) {
-      return const Color.fromARGB(255, 246, 246, 249);
-    } else {
-      // Return a different color for dark theme if needed
-      return const Color(0xff262628);
-    }
   }
 
   Future<void> loadResumePdf() async {
@@ -60,88 +50,72 @@ class ResumeScreenState extends State<ResumeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter PDF View',
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: _getBackgroundColor(context),
-        // if(themeData.light()==true){
-        // backgroundColor: const Color(0xff262628),
-
-        // }
-        // else{
-        // backgroundColor: const Color(0xff262628),
-
-        // }
-
-        appBar: AppBar(
-          // backgroundColor: Colors.black87,
-          // backgroundColor: const Color(0xff262628),
-automaticallyImplyLeading: false,
-          title: const Text(
-            'Resume PDF',
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const Text(
+          'Resume PDF',
           style: TextStyle(fontWeight: FontWeight.bold),
 
-            // style: TextStyle(color: Colors.white70),
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.share),
-              onPressed: () {
-                if (_resumePath.isNotEmpty) {
-                  // sharePdfFile();
-                }
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.download),
-              onPressed: () {
-                // You can implement the download functionality here if needed
-              },
-            ),
-          ],
+          // style: TextStyle(color: Colors.white70),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _resumePath.isEmpty
-                ? const Center(child: CircularProgressIndicator())
-                : Expanded(
-                    flex: 8,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black,
-                          width: 1.0,
-                        ),
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.share),
+        //     onPressed: () {
+        //       if (_resumePath.isNotEmpty) {
+        //         // sharePdfFile();
+        //       }
+        //     },
+        //   ),
+        //   IconButton(
+        //     icon: const Icon(Icons.download),
+        //     onPressed: () {
+        //       // You can implement the download functionality here if needed
+        //     },
+        //   ),
+        // ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _resumePath.isEmpty
+              ? const Center(child: CircularProgressIndicator())
+              : Expanded(
+                  flex: 8,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1.0,
                       ),
-                      child: PDFViewer(path: _resumePath),
                     ),
+                    child: PDFViewer(path: _resumePath),
                   ),
-            Expanded(
-              flex: 2,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            const Color.fromARGB(255, 255, 255, 255),
-                        minimumSize: const Size(150, 50),
-                      ),
-                      onPressed: () {
-                        launch(
-                          'https://drive.google.com/file/d/1h2IhiR2B9XzpfIRlpRPx8ET4ljGVNdpk/view?usp=sharing',
-                          forceWebView: false,
-                        );
-                      },
-                      child: const Text("Open file")),
                 ),
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      // backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      elevation: 3,
+                      minimumSize: const Size(150, 50),
+                    ),
+                    onPressed: () {
+                      launch(
+                        'https://drive.google.com/file/d/1h2IhiR2B9XzpfIRlpRPx8ET4ljGVNdpk/view?usp=sharing',
+                        forceWebView: false,
+                      );
+                    },
+                    child: const Text("Open file")),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
