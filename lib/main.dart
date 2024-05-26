@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:overlay_support/overlay_support.dart';
 import 'package:portfolio/Screen/splash_screen.dart';
 
 // void main() async {
@@ -36,14 +37,18 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   final ThemeMode _currentThemeMode = ThemeMode.light;
 
+// ignore_for_file: must_be_immutable
+
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      themeMode: _currentThemeMode,
-      theme: ThemeData.light(), // Define your light theme
-      darkTheme: ThemeData.dark(),
-      debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+    return OverlaySupport.global(
+      child: GetMaterialApp(
+        themeMode: _currentThemeMode,
+        theme: ThemeData.light(), // Define your light theme
+        darkTheme: ThemeData.dark(),
+        debugShowCheckedModeBanner: false,
+        home: const SplashScreen(),
+      ),
     );
   }
 }

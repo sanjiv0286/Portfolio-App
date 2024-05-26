@@ -121,10 +121,9 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:http/http.dart' as http;
+import 'package:portfolio/sevices/internet_connection.dart';
 import 'dart:convert';
-
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:url_launcher/url_launcher.dart';
 
 class CpProfileScreen extends StatefulWidget {
   const CpProfileScreen({Key? key}) : super(key: key);
@@ -139,7 +138,22 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
 
   @override
   void initState() {
+    Internet().checkInternetCon();
     super.initState();
+    // InternetConnectionChecker().onStatusChange.listen((status) {
+    // final connected = status == InternetConnectionStatus.connected;
+    // showSimpleNotification(
+    //     Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+    //     background: Colors.lightGreen);
+    // ScaffoldMessenger.of(context).showSnackBar(
+    //   SnackBar(
+    //     content: Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+    //     backgroundColor: connected ? Colors.lightGreen : Colors.red,
+    //     duration: const Duration(seconds: 3),
+    //   ),
+    // );
+    // });
+
     leetCodeData = fetchLeetCodeData('sanjiv0286');
     codeChefData = fetchCodeChefData('stupid_romio');
   }
@@ -199,7 +213,7 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text(
-          'Coding Profile',
+          'My Coding Profile',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
@@ -209,77 +223,6 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Card(
-                elevation: 3,
-                child: ExpansionTile(
-                  title: const Text('LeetCode Profile',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w900)),
-                  children: [
-                    FutureBuilder<Map<String, dynamic>>(
-                      future: leetCodeData,
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return const Center(
-                              child: CircularProgressIndicator());
-                        } else if (snapshot.hasError) {
-                          return Center(
-                              child: Text('Error: ${snapshot.error}'));
-                        } else if (!snapshot.hasData ||
-                            snapshot.data!['status'] != 'success') {
-                          return const Center(child: Text('No data found'));
-                        } else {
-                          final data = snapshot.data!;
-                          return Column(
-                            children: [
-                              ProfileStatCard(
-                                  title: 'Total Solved',
-                                  value: data['totalSolved'].toString()),
-                              ProfileStatCard(
-                                  title: 'Easy Solved',
-                                  value: data['easySolved'].toString()),
-                              ProfileStatCard(
-                                  title: 'Medium Solved',
-                                  value: data['mediumSolved'].toString()),
-                              ProfileStatCard(
-                                  title: 'Hard Solved',
-                                  value: data['hardSolved'].toString()),
-                              ProfileStatCard(
-                                  title: 'Acceptance Rate',
-                                  value: '${data['acceptanceRate']}%'),
-                              ProfileStatCard(
-                                  title: 'Ranking',
-                                  value: data['ranking'].toString()),
-                              ProfileStatCard(
-                                  title: 'Contribution Points',
-                                  value: data['contributionPoints'].toString()),
-                              ProfileChart(data: data),
-                              // const SizedBox(height: 5),
-                              // ElevatedButton(
-                              //   onPressed: () {
-                              //     launch(
-                              //       'https://leetcode.com/u/sanjiv0286/',
-                              //       forceWebView: true,
-                              //     );
-                              //   },
-                              //   child: const Text('View Profile'),
-                              // ),
-                              const SizedBox(height: 10),
-                              buildProfileButton(
-                                  'https://leetcode.com/u/sanjiv0286/',
-                                  'View Profile'),
-
-                              const SizedBox(height: 10),
-                            ],
-                          );
-                        }
-                      },
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
               Card(
                 elevation: 3,
                 child: ExpansionTile(
@@ -488,6 +431,78 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
                   trailing: buildProfileButton(
                       'https://www.stopstalk.com/user/profile/S_K',
                       'View Profile'),
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              Card(
+                elevation: 3,
+                child: ExpansionTile(
+                  title: const Text('LeetCode Profile',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w900)),
+                  children: [
+                    FutureBuilder<Map<String, dynamic>>(
+                      future: leetCodeData,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        } else if (snapshot.hasError) {
+                          return Center(
+                              child: Text('Error: ${snapshot.error}'));
+                        } else if (!snapshot.hasData ||
+                            snapshot.data!['status'] != 'success') {
+                          return const Center(child: Text('No data found'));
+                        } else {
+                          final data = snapshot.data!;
+                          return Column(
+                            children: [
+                              ProfileStatCard(
+                                  title: 'Total Solved',
+                                  value: data['totalSolved'].toString()),
+                              ProfileStatCard(
+                                  title: 'Easy Solved',
+                                  value: data['easySolved'].toString()),
+                              ProfileStatCard(
+                                  title: 'Medium Solved',
+                                  value: data['mediumSolved'].toString()),
+                              ProfileStatCard(
+                                  title: 'Hard Solved',
+                                  value: data['hardSolved'].toString()),
+                              ProfileStatCard(
+                                  title: 'Acceptance Rate',
+                                  value: '${data['acceptanceRate']}%'),
+                              ProfileStatCard(
+                                  title: 'Ranking',
+                                  value: data['ranking'].toString()),
+                              ProfileStatCard(
+                                  title: 'Contribution Points',
+                                  value: data['contributionPoints'].toString()),
+                              ProfileChart(data: data),
+                              // const SizedBox(height: 5),
+                              // ElevatedButton(
+                              //   onPressed: () {
+                              //     launch(
+                              //       'https://leetcode.com/u/sanjiv0286/',
+                              //       forceWebView: true,
+                              //     );
+                              //   },
+                              //   child: const Text('View Profile'),
+                              // ),
+                              const SizedBox(height: 10),
+                              buildProfileButton(
+                                  'https://leetcode.com/u/sanjiv0286/',
+                                  'View Profile'),
+
+                              const SizedBox(height: 10),
+                            ],
+                          );
+                        }
+                      },
+                    ),
+                  ],
                 ),
               ),
             ],

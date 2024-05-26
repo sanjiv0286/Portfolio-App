@@ -54,7 +54,7 @@ class ResumeScreenState extends State<ResumeScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text(
-          'Resume PDF',
+          'My Resume',
           style: TextStyle(fontWeight: FontWeight.bold),
 
           // style: TextStyle(color: Colors.white70),

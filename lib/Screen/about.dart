@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/Screen/contact.dart';
+import 'package:portfolio/homescreen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeScreen extends StatelessWidget {
@@ -87,9 +88,10 @@ class AboutMeScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to Resume page
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ResumeScreen()));
-                    Get.to(() => const ContactScreen());
+                    Get.offAll(
+                      () => const MyHomePage(),
+                      arguments: 2,
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(150, 50),
@@ -99,9 +101,10 @@ class AboutMeScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to Projects page
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ProjectsScreen()));
-                    Get.to(() => const ContactScreen());
+                    Get.offAll(
+                      () => const MyHomePage(),
+                      arguments: 4,
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(150, 50),
@@ -111,8 +114,6 @@ class AboutMeScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to Contact page
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ContactScreen()));
                     Get.to(() => const ContactScreen());
                   },
                   style: ElevatedButton.styleFrom(

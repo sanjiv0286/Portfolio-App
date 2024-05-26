@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:portfolio/Screen/about.dart';
 import 'package:portfolio/Screen/certificate.dart';
 import 'package:portfolio/Screen/contact.dart';
@@ -39,8 +39,25 @@ class MyHomePageState extends State<MyHomePage>
 // *********************************
   @override
   void initState() {
+    // Internet().checkInternetCon();
     super.initState();
+    InternetConnectionChecker().onStatusChange.listen((status) {
+      final connected = status == InternetConnectionStatus.connected;
+      // showSimpleNotification(
+      //     Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+      //     background: Colors.green);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+          backgroundColor: connected ? Colors.lightGreen : Colors.red,
+          duration: const Duration(seconds: 3),
+        ),
+      );
+    });
     _tabController = TabController(length: _screens.length, vsync: this);
+    // Read the argument and navigate to the specified tab if provided
+    int initialIndex = Get.arguments ?? 0;
+    _tabController.index = initialIndex;
   }
 
   @override

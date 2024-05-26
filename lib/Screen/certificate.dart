@@ -85,6 +85,7 @@ class CertificateScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Certifications'),
       ),
       body: LayoutBuilder(
@@ -210,27 +211,30 @@ class CertificateScreen extends StatelessWidget {
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? Colors.blue
-                  : Colors.black87,
-            ),
-            height: height,
-            width: width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (iconPath != null)
-                  Image.asset(iconPath, width: iconSize, height: iconSize)
-                else
-                  Icon(iconData, size: iconSize, color: Colors.white),
-                const SizedBox(height: 10),
-                Text(text,
-                    style: TextStyle(color: Colors.white, fontSize: textSize)),
-              ],
+          child: Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.blue
+                    : Colors.black87,
+              ),
+              height: height,
+              width: width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  if (iconPath != null)
+                    Image.asset(iconPath, width: iconSize, height: iconSize)
+                  else
+                    Icon(iconData, size: iconSize, color: Colors.white),
+                  const SizedBox(height: 10),
+                  Text(text,
+                      style:
+                          TextStyle(color: Colors.white, fontSize: textSize)),
+                ],
+              ),
             ),
           ),
         ),

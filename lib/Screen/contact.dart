@@ -38,7 +38,6 @@ class ContactScreen extends StatelessWidget {
           'Contact',
           // style: TextStyle(color: Colors.white),
           style: TextStyle(fontWeight: FontWeight.bold),
-
         ),
         // backgroundColor: Theme.of(context).colorScheme.background,
 
@@ -234,8 +233,10 @@ class ContactScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ResumeScreen()));
-                      Get.to(() => const ContactScreen());
+                      Get.offAll(
+                        () => const MyHomePage(),
+                        arguments: 2,
+                      ); 
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(150, 50),
@@ -246,7 +247,11 @@ class ContactScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       // Navigator.push(context, MaterialPageRoute(builder: (context) => ProjectsScreen()));
-                      Get.to(() => const ContactScreen());
+                      // Get.to(() => const ContactScreen());
+                      Get.offAll(
+                        () => const MyHomePage(),
+                        arguments: 4,
+                      ); // Navigate to Projects tab
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(150, 50),
