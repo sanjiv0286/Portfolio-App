@@ -34,7 +34,7 @@ class AboutMeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              "Passionate and seasoned Product Designer with 10 years of experience translating ideas into visually stunning, user-centric experiences. Proficient in Figma, I excel in collaborative, cross-functional environments.",
+              "A highly motivated B.Tech final year student pursuing Electronics and Communication Engineering (Enthusiast in Comuter Science or Related field) at IIIT Naya Raipur . With a passion for problem-solving, I have developed a keen interest in Data Structures and Algorithms (DSA) and have honed skills in this area. I have a solid foundation in programming languages such as C , C++ , Java and JavaScript , and I am proficient in using them to implement complex algorithms. I am a quick learner and enjoy working on challenging projects that require creative thinking and logical reasoning. My proficiency in DSA has made me stand out as a valuable asset to any team I work with. With a lot of dedication and skills, I am poised to make a positive impact in computer science.",
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 24),
@@ -46,14 +46,23 @@ class AboutMeScreen extends StatelessWidget {
             const Text("• Innovation-driven mindset"),
             const Text("• Versatility across mobile and web design"),
             const Text("• Effective communication and collaboration"),
+            const Text(
+                "• An enthusiastic learner, ready to take up new challenges and provide an optimized solution."),
             const SizedBox(height: 24),
             const Text(
               "🏆 Achievements",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
+            const Text("• Skilled In:"),
+            const Text("1. Competitive Programming"),
+            const Text("2. Data structures and Algorithms"),
+            const Text("3. Mobile App Development"),
+            const Text("•  3⭐ on Codechef"),
+            const Text("•  Knight on Leetcode"),
             const Text(
-                "Contributed to [mention notable projects or achievements], earning recognition for excellence and innovation in product design."),
+                "•  Solved 1,000+ algorithmic coding problems on various platforms."),
+            const Text("•  Ranked among the Top 4% in the JEE-Mains 2021."),
             const SizedBox(height: 24),
             const Text(
               "🌟 Future Focus",
@@ -61,10 +70,12 @@ class AboutMeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             const Text(
-                "Committed to staying ahead of design trends, I aim to craft impactful designs that elevate user experiences."),
+                "•  Passionate about leveraging technology to solve complex challenges, I thrive in collaborative environments and dedicated to continuous learning and growth in the ever-evolving field of software development"),
             const SizedBox(height: 8),
             const Text(
-                "Let's create design stories that resonate and inspire."),
+                " I am seeking opportunities as a software developer (SDE)  and would love to connect with you!\n✉️ Email: sanjiv21101@iiitnr.edu.in"),
+            const SizedBox(height: 8),
+            // const Text(""),
             const SizedBox(
               height: 24,
               width: double.infinity,

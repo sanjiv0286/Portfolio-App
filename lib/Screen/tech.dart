@@ -9,20 +9,31 @@ class TechnicalSkillsScreen extends StatefulWidget {
 
 class _TechnicalSkillsScreenState extends State<TechnicalSkillsScreen> {
   final List<String> skills = [
-    'Flutter',
-    'Dart',
-    'UI/UX Design',
-    'Firebase',
-    'JavaScript',
-    'React Native',
-    'Node.js',
-    'SQL',
-    'Git',
-    'Python',
+    'C/C++',
     'HTML/CSS',
-    'Mobile App Development',
-    'Responsive Design',
+    'Javascript',
+    'Java',
+    'Data Structure',
+    'Algorithms',
+    'Programming',
     'Problem Solving',
+    'Git',
+    'Web Development',
+    'Mobile App Development',
+    'Dart',
+    'Flutter',
+    'Firebase',
+    'Responsive Design',
+    'API(Application programming Interface)',
+    'Rest API',
+    'Object Oriented Programming',
+    'Team Work',
+    'Good Communication',
+    'SQL(Structured Query Language)',
+    'Operating System(OS)',
+    'Database Management System(DBMS)',
+    'Computer Network',
+    'Basics Of Low Level Design'
   ];
 
   @override

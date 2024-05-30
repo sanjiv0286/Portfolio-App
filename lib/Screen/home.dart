@@ -12,63 +12,63 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  myAchieve(String num, String type) {
-    return Row(
-      children: [
-        Text(
-          num,
-          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 10),
-          child: Text(type),
-        ),
-      ],
-    );
-  }
+  // myAchieve(String num, String type) {
+  //   return Row(
+  //     children: [
+  //       Text(
+  //         num,
+  //         style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+  //       ),
+  //       Container(
+  //         margin: const EdgeInsets.only(top: 10),
+  //         child: Text(type),
+  //       ),
+  //     ],
+  //   );
+  // }
 
-  myspec(icon, text) {
-    return SizedBox(
-      width: 105,
-      height: 115,
-      child: Card(
-        margin: const EdgeInsets.all(0),
-        color: const Color(0xff252525),
-        // color: Theme.of(context).textTheme.bodyLarge!.color,
+  // myspec(icon, text) {
+  //   return SizedBox(
+  //     width: 105,
+  //     height: 115,
+  //     child: Card(
+  //       margin: const EdgeInsets.all(0),
+  //       color: const Color(0xff252525),
+  //       // color: Theme.of(context).textTheme.bodyLarge!.color,
 
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-        // ignore: avoid_unnecessary_containers
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                // Icons.android,
-                icon,
-                color: Colors.white,
-                // color: Theme.of(context).textTheme.bodyLarge!.color,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                // "Android",
-                text,
-                style: const TextStyle(
-                  color: Colors.white,
-                  // color: Theme.of(context).textTheme.bodyLarge!.color,
+  //       shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(15),
+  //       ),
+  //       // ignore: avoid_unnecessary_containers
+  //       child: Container(
+  //         child: Column(
+  //           mainAxisAlignment: MainAxisAlignment.center,
+  //           children: [
+  //             Icon(
+  //               // Icons.android,
+  //               icon,
+  //               color: Colors.white,
+  //               // color: Theme.of(context).textTheme.bodyLarge!.color,
+  //             ),
+  //             const SizedBox(
+  //               height: 10,
+  //             ),
+  //             Text(
+  //               // "Android",
+  //               text,
+  //               style: const TextStyle(
+  //                 color: Colors.white,
+  //                 // color: Theme.of(context).textTheme.bodyLarge!.color,
 
-                  fontSize: 16,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  //                 fontSize: 16,
+  //               ),
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -312,7 +312,7 @@ class HomeScreenState extends State<HomeScreen> {
       //       )
       //     : FloatingActionButton(
       //         onPressed: () {
-      //          _showBottomSheet(context);
+      //           _showBottomSheet(context);
       //         },
       //         child: const Icon(Icons.add),
       //       ),
@@ -369,9 +369,9 @@ class HomeScreenState extends State<HomeScreen> {
   //                     Row(
   //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
   //                       children: [
-  //                         myspec(Icons.android, 'Android'),
-  //                         myspec(Icons.android, 'Android'),
-  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(FontAwesomeIcons.c, 'C/C++'),
+  //                         myspec(FontAwesomeIcons.java, 'Java'),
+  //                         myspec(Icons.javascript, 'Javascript'),
   //                       ],
   //                     ),
   //                     const SizedBox(
@@ -380,9 +380,9 @@ class HomeScreenState extends State<HomeScreen> {
   //                     Row(
   //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
   //                       children: [
-  //                         myspec(Icons.android, 'Android'),
-  //                         myspec(Icons.android, 'Android'),
-  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(FontAwesomeIcons.python, 'Python'),
+  //                         myspec(Icons.web_asset, 'HTML/CSS'),
+  //                         myspec(Icons.flutter_dash, 'Dart'),
   //                       ],
   //                     ),
   //                     const SizedBox(
@@ -391,9 +391,9 @@ class HomeScreenState extends State<HomeScreen> {
   //                     Row(
   //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
   //                       children: [
-  //                         myspec(Icons.android, 'Android'),
-  //                         myspec(Icons.android, 'Android'),
-  //                         myspec(Icons.android, 'Android'),
+  //                         myspec(FontAwesomeIcons.dashcube, 'DSA'),
+  //                         myspec(FontAwesomeIcons.dashcube, 'Algorithms'),
+  //                         myspec(Icons.android, 'Firebase'),
   //                       ],
   //                     ),
   //                   ],
