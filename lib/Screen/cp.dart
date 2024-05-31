@@ -97,7 +97,7 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
                 child: ExpansionTile(
                   title: const Text(
                     'LeetCode Profile',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   ),
                   children: [
                     FutureBuilder<Map<String, dynamic>>(
@@ -260,7 +260,7 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
                 child: ExpansionTile(
                   title: const Text('CodeChef Profile',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w900)),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                   children: [
                     FutureBuilder<Map<String, dynamic>>(
                       future: codeChefData,
@@ -367,8 +367,7 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
                               SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     StatCard(
                                       title: 'Global Rank',
@@ -458,13 +457,18 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
                 elevation: 3,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
+                  child: ExpansionTile(
                     title: const Text('GFG Profile',
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w900)),
-                    trailing: buildProfileButton(
-                        'https://www.geeksforgeeks.org/user/sanjivkushbyx8/',
-                        'View Profile'),
+                            fontSize: 20, fontWeight: FontWeight.w700)),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: buildProfileButton(
+                            'https://www.geeksforgeeks.org/user/sanjivkushbyx8/',
+                            'View Profile'),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -474,13 +478,18 @@ class _CpProfileScreenState extends State<CpProfileScreen> {
                 elevation: 3,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
+                  child: ExpansionTile(
                     title: const Text('StopStalk',
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w900)),
-                    trailing: buildProfileButton(
-                        'https://www.stopstalk.com/user/profile/S_K',
-                        'View Profile'),
+                            fontSize: 20, fontWeight: FontWeight.w700)),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: buildProfileButton(
+                            'https://www.stopstalk.com/user/profile/S_K',
+                            'View Profile'),
+                      ),
+                    ],
                   ),
                 ),
               ),

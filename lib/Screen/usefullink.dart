@@ -268,7 +268,9 @@ class UsefulLink extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.start,
+
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   _buildRow(
@@ -337,7 +339,7 @@ class UsefulLink extends StatelessWidget {
   Widget _buildRow(BuildContext context, BoxConstraints constraints,
       List<Map<String, dynamic>> linkData) {
     final itemWidth = constraints.maxWidth * 0.45;
-    final itemHeight = MediaQuery.of(context).size.height * 0.20;
+    // final itemHeight = MediaQuery.of(context).size.height * 0.20;
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -346,7 +348,7 @@ class UsefulLink extends StatelessWidget {
           return _buildClickableContainer(
             context,
             itemWidth,
-            itemHeight,
+            // itemHeight,
             data['text'],
             data['url'],
             data['iconData'],
@@ -356,8 +358,14 @@ class UsefulLink extends StatelessWidget {
     );
   }
 
-  Widget _buildClickableContainer(BuildContext context, double width,
-      double height, String text, String url, IconData iconData) {
+  Widget _buildClickableContainer(
+    BuildContext context,
+    double width,
+    // double height,
+    String text,
+    String url,
+    IconData iconData,
+  ) {
     final iconSize = MediaQuery.of(context).size.width * 0.1;
     final textSize = MediaQuery.of(context).size.width * 0.04;
 
@@ -379,15 +387,23 @@ class UsefulLink extends StatelessWidget {
                   ? Colors.blue
                   : Colors.black87,
             ),
-            height: height,
-            width: width,
+            // height: height,
+            // width: width,
+            // Removed height and width to make it flexible
+            padding: const EdgeInsets.all(
+                25.0), // Added padding instead of fixed height
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(iconData, size: iconSize, color: Colors.white),
                 const SizedBox(height: 10),
                 Text(text,
-                    style: TextStyle(color: Colors.white, fontSize: textSize)),
+                    // Added textAlign to center the text
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: textSize,
+                    )),
               ],
             ),
           ),

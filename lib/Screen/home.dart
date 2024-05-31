@@ -109,7 +109,7 @@ class HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-              // alignment: Alignment.center,
+              alignment: Alignment.center,
               margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.35),
               child: Column(
@@ -120,7 +120,7 @@ class HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       // color: Colors.white,
                       color: Theme.of(context).textTheme.bodyLarge!.color,
-                      fontSize: 30,
+                      fontSize: 27,
                       // fontFamily: "Soho",
                       fontWeight: FontWeight.w500,
                     ),
@@ -133,7 +133,7 @@ class HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       // color: Colors.white,
                       color: Theme.of(context).textTheme.bodyLarge!.color,
-                      fontSize: 40,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                       // fontFamily: "Soho",
                     ),
@@ -148,11 +148,11 @@ class HomeScreenState extends State<HomeScreen> {
                       // fontFamily: "Soho",
                       color: Theme.of(context).textTheme.bodyLarge!.color,
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 22,
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   SizedBox(
                     width: 120,
@@ -168,7 +168,7 @@ class HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -290,7 +290,7 @@ class HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.01,
+                    height: MediaQuery.of(context).size.height * 0.05,
                   ),
                   // const SizedBox(
                   //   height: 5,
