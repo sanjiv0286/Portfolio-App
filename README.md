@@ -31,13 +31,14 @@ The **Flutter Portfolio App** is designed to showcase my skills and projects in 
 - **GetX**
 - **REST API**
 - **Animations**
-
+<!--
 ## Screenshots
 
 <p align="center">
 <img src="link-to-light-mode-screenshot" alt="Light Mode Screenshot" width="300"/>
 <img src="link-to-dark-mode-screenshot" alt="Dark Mode Screenshot" width="300"/>
 </p>
+-->
 
 ## Installation
 
