@@ -77,6 +77,6 @@ For any inquiries or feedback, please contact me at:
 - **GitHub**: [GitHub](https://github.com/sanjiv0286)
 
 
-<img src= "https://visitor-badge.laobi.icu/badge?page_id=sanjiv0286/Portfolio-Android-App" alt="visitor badge"/> |  ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/sanjiv0286/Portfolio-Android-App/main)
+<img src= "https://visitor-badge.laobi.icu/badge?page_id=sanjiv0286/Portfolio-App" alt="visitor badge"/> |  ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/sanjiv0286/Portfolio-App/main)
 #
 ## Just follow☝️ me and Star⭐ my repository 
