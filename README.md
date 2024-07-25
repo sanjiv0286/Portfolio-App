@@ -10,6 +10,10 @@
 
 <h1 align="center">Flutter Portfolio App</h1>
 
+<p align="center">
+<a href="http://www.indusappstore.com/details/indus/1091606" target="_blank"><img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-02/26/full/1708946829-1066.jpg?im=FitAndFill=(826,465)" width="200"/></a>
+</p>
+
 The **Flutter Portfolio App** is designed to showcase my skills and projects in a well-organized and engaging format. Built using Dart and Flutter, this cross-platform Android app offers an intuitive user experience with features like light/dark themes and real-time content updates. The app helps me connect with recruiters and present my professional profile effectively.
 
 ## Features
