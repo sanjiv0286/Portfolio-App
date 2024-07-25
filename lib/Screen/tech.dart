@@ -33,7 +33,7 @@ class _TechnicalSkillsScreenState extends State<TechnicalSkillsScreen> {
     'Operating System(OS)',
     'Database Management System(DBMS)',
     'Computer Network',
-    'Basics Of Low Level Design'
+    // 'Basics Of Low Level Design'
   ];
 
   @override

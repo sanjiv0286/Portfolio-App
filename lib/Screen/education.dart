@@ -30,7 +30,7 @@ class EducationScreen extends StatelessWidget {
           'Bachelor of Technology in Electronics and Communication Engineering ',
       institution: 'IIIT Naya Raipur',
       description:
-          'current cgpa 7.79 till 5th Semester\nEnthusiast in Comuter Science or Related field',
+          'current cgpa 7.80 till 6th Semester\nEnthusiast in Comuter Science or Related field',
       startDate: DateTime(2021, 12, 12), // Add actual dates
       endDate: DateTime(2025, 8, 30), // Add actual dates
     ),

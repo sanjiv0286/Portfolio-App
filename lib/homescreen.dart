@@ -8,11 +8,13 @@ import 'package:portfolio/Screen/certificate.dart';
 import 'package:portfolio/Screen/contact.dart';
 import 'package:portfolio/Screen/cp.dart';
 import 'package:portfolio/Screen/education.dart';
+import 'package:portfolio/Screen/help_page.dart';
 import 'package:portfolio/Screen/home.dart';
 import 'package:portfolio/Screen/project.dart';
 import 'package:portfolio/Screen/resume.dart';
 import 'package:portfolio/Screen/tech.dart';
 import 'package:portfolio/Screen/usefullink.dart';
+// import 'package:portfolio/main.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -259,6 +261,19 @@ class MyHomePageState extends State<MyHomePage>
                     onTap: () {
                       Get.back();
                       Get.to(() => const UsefulLink());
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.help),
+                    title: const Text('Help'),
+                    onTap: () {
+                      Get.back();
+                      Get.to(
+                        () => const HelpPage(
+                          linkedInUrl:
+                              'https://www.linkedin.com/in/sanjiv-kushwaha101/',
+                        ),
+                      );
                     },
                   ),
                 ],

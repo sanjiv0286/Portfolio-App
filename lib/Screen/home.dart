@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/Screen/contact.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -159,7 +161,9 @@ class HomeScreenState extends State<HomeScreen> {
                     // width: MediaQuery.of(context).size.width * 0.3,
 
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const ContactScreen());
+                      },
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.black,
                         backgroundColor: Colors.white, // Background Color
