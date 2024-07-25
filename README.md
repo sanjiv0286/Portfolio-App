@@ -1,4 +1,5 @@
 
+## This is my portfolio app, available on multiple platforms. You can download it from the links below:
 
 <p align="center">
 <img src="https://play-lh.googleusercontent.com/6DXVm080hJmMQqGt-cbt96dt3uOpHIgqRkaRDQzgllNbz50TWzm8h9oNTVd6AFdUdMo=w480-h960-rw" alt="Portfolio App Logo" width="200"/>
@@ -9,6 +10,9 @@
 </p>
 
 <h1 align="center">Flutter Portfolio App</h1>
+
+- **Indus App Store**: First, install the Indus App from the Chrome browser, then click the link below to download the app: [Download here](http://www.indusappstore.com/details/indus/1091606)
+
 
 <p align="center">
 <a href="http://www.indusappstore.com/details/indus/1091606" target="_blank"><img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-02/26/full/1708946829-1066.jpg?im=FitAndFill=(826,465)" width="200"/></a>
