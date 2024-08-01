@@ -1,4 +1,5 @@
 
+## This is my portfolio app, available on multiple platforms. You can download it from the links below:
 
 <p align="center">
 <img src="https://play-lh.googleusercontent.com/6DXVm080hJmMQqGt-cbt96dt3uOpHIgqRkaRDQzgllNbz50TWzm8h9oNTVd6AFdUdMo=w480-h960-rw" alt="Portfolio App Logo" width="200"/>
@@ -9,6 +10,13 @@
 </p>
 
 <h1 align="center">Flutter Portfolio App</h1>
+
+- **Indus App Store**: First, install the Indus App from the Chrome browser, then click the link below to download the app: [Download here](http://www.indusappstore.com/details/indus/1091606)
+
+
+<p align="center">
+<a href="http://www.indusappstore.com/details/indus/1091606" target="_blank"><img src="https://docstore.indusappstore.com/public/external/developerdashboard-static/badge-black-background-english.png" width="200"/></a>
+</p>
 
 The **Flutter Portfolio App** is designed to showcase my skills and projects in a well-organized and engaging format. Built using Dart and Flutter, this cross-platform Android app offers an intuitive user experience with features like light/dark themes and real-time content updates. The app helps me connect with recruiters and present my professional profile effectively.
 
@@ -31,13 +39,14 @@ The **Flutter Portfolio App** is designed to showcase my skills and projects in 
 - **GetX**
 - **REST API**
 - **Animations**
-
+<!--
 ## Screenshots
 
 <p align="center">
 <img src="link-to-light-mode-screenshot" alt="Light Mode Screenshot" width="300"/>
 <img src="link-to-dark-mode-screenshot" alt="Dark Mode Screenshot" width="300"/>
 </p>
+-->
 
 ## Installation
 
@@ -76,6 +85,6 @@ For any inquiries or feedback, please contact me at:
 - **GitHub**: [GitHub](https://github.com/sanjiv0286)
 
 
-<img src= "https://visitor-badge.laobi.icu/badge?page_id=sanjiv0286/Portfolio-Android-App" alt="visitor badge"/> |  ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/sanjiv0286/Portfolio-Android-App/main)
+<img src= "https://visitor-badge.laobi.icu/badge?page_id=sanjiv0286/Portfolio-App" alt="visitor badge"/> |  ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/sanjiv0286/Portfolio-App/main)
 #
 ## Just follow☝️ me and Star⭐ my repository 
